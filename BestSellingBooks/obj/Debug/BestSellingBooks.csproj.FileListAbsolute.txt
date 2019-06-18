@@ -82,3 +82,7 @@ C:\Users\user\source\repos\BestSellingBooks\BestSellingBooks\bin\EntityFramework
 C:\Users\user\source\repos\BestSellingBooks\BestSellingBooks\bin\EntityFramework.SqlServer.dll
 C:\Users\user\source\repos\BestSellingBooks\BestSellingBooks\bin\EntityFramework.xml
 C:\Users\user\source\repos\BestSellingBooks\BestSellingBooks\bin\EntityFramework.SqlServer.xml
+C:\Users\user\source\repos\BestSellingBooks\BestSellingBooks\bin\System.Linq.Dynamic.dll
+C:\Users\user\source\repos\BestSellingBooks\BestSellingBooks\obj\Debug\BestSellingBooks.Migrations.InitialCreate.resources
+C:\Users\user\source\repos\BestSellingBooks\BestSellingBooks\obj\Debug\BestSellingBooks.csproj.GenerateResource.cache
+C:\Users\user\source\repos\BestSellingBooks\BestSellingBooks\obj\Debug\BestSellingBooks.Migrations.InitialMigration.resources

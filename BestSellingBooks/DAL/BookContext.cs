@@ -6,13 +6,14 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Web;
 
+
 
 
 namespace BestSellingBooks.DAL
 {
-    public class BookContext : DbContext
+    public class BooksContext : DbContext
     {
-        public BookContext() : base("BookContext")
+        public BooksContext() : base("BooksContext")
         {
         }
         public DbSet<Book> Books { get; set; }

@@ -3,13 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Web;
+using System.Web;
 
 namespace BestSellingBooks.DAL
 {
-    public class BookInitializer : DropCreateDatabaseIfModelChanges<BookContext>
+    public class BookInitializer : DropCreateDatabaseIfModelChanges<BooksContext>
     {
-        protected override void Seed(BookContext context)
+        protected override void Seed(BooksContext context)
         {
             var author = new Author
             {
