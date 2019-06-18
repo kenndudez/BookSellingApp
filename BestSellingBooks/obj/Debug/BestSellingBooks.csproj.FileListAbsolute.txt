@@ -78,3 +78,7 @@ C:\Users\user\source\repos\BestSellingBooks\BestSellingBooks\obj\Debug\BestSelli
 C:\Users\user\source\repos\BestSellingBooks\BestSellingBooks\obj\Debug\BestSellingBooks.csproj.CopyComplete
 C:\Users\user\source\repos\BestSellingBooks\BestSellingBooks\obj\Debug\BestSellingBooks.dll
 C:\Users\user\source\repos\BestSellingBooks\BestSellingBooks\obj\Debug\BestSellingBooks.pdb
+C:\Users\user\source\repos\BestSellingBooks\BestSellingBooks\bin\EntityFramework.dll
+C:\Users\user\source\repos\BestSellingBooks\BestSellingBooks\bin\EntityFramework.SqlServer.dll
+C:\Users\user\source\repos\BestSellingBooks\BestSellingBooks\bin\EntityFramework.xml
+C:\Users\user\source\repos\BestSellingBooks\BestSellingBooks\bin\EntityFramework.SqlServer.xml
