@@ -19,9 +19,9 @@ namespace BestSellingBooks
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            var bookContext = new BooksContext();
-            Database.SetInitializer(new BookInitializer());
-            bookContext.Database.Initialize(true);
+          //  var bookContext = new BooksContext();
+          //  Database.SetInitializer(new BookInitializer());
+         //   bookContext.Database.Initialize(true);
         }
     }
 }

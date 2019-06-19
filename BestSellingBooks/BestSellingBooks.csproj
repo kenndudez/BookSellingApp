@@ -151,6 +151,10 @@
     <Compile Include="Migrations\201906182305306_InitialMigration.Designer.cs">
       <DependentUpon>201906182305306_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906191248122_initial.cs" />
+    <Compile Include="Migrations\201906191248122_initial.Designer.cs">
+      <DependentUpon>201906191248122_initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Book.cs" />
@@ -182,6 +186,8 @@
     <Content Include="Scripts\knockout-3.5.0.debug.js" />
     <Content Include="Scripts\knockout-3.5.0.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\ViewModels\AuthorFormViewModel.js" />
+    <Content Include="Scripts\ViewModels\AuthorIndexViewModel.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -196,10 +202,9 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Authors\Create.cshtml" />
+    <Content Include="Views\Authors\form.cshtml" />
     <Content Include="Views\Authors\Delete.cshtml" />
     <Content Include="Views\Authors\Details.cshtml" />
-    <Content Include="Views\Authors\Edit.cshtml" />
     <Content Include="Views\Authors\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -224,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906182305306_InitialMigration.resx">
       <DependentUpon>201906182305306_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906191248122_initial.resx">
+      <DependentUpon>201906191248122_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
