@@ -1,4 +1,4 @@
-﻿using BestSellingBooks.Models;
+﻿using BestSellingBooks.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

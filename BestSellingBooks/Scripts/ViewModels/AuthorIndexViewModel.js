@@ -13,4 +13,15 @@
         self.sending(true);
         return true;
     };
-};
+    self.showModal = function (data, event) {
+        self.sending = ko.observable(false);
+        $.get($(event.target).attr('href'), function (d) {
+            $('.body-content').prepend(d);
+            $('#detailModal').modal('show');
+            ko.applyBindings(self, document.getElementById('detailModal'));
+        });
+        self.detailAuthor = function (form) {
+            self.sending(true);
+            return true;
+        };
+    };}

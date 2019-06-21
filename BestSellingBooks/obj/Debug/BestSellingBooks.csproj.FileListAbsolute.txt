@@ -87,3 +87,14 @@ C:\Users\user\source\repos\BestSellingBooks\BestSellingBooks\obj\Debug\BestSelli
 C:\Users\user\source\repos\BestSellingBooks\BestSellingBooks\obj\Debug\BestSellingBooks.csproj.CopyComplete
 C:\Users\user\source\repos\BestSellingBooks\BestSellingBooks\obj\Debug\BestSellingBooks.dll
 C:\Users\user\source\repos\BestSellingBooks\BestSellingBooks\obj\Debug\BestSellingBooks.pdb
+C:\Users\user\source\repos\BestSellingBooks\BestSellingBooks\bin\AutoMapper.Attributes.dll
+C:\Users\user\source\repos\BestSellingBooks\BestSellingBooks\bin\AutoMapper.dll
+C:\Users\user\source\repos\BestSellingBooks\BestSellingBooks\bin\AutoMapper.pdb
+C:\Users\user\source\repos\BestSellingBooks\BestSellingBooks\bin\AutoMapper.xml
+C:\Users\user\source\repos\BestSellingBooks\BestSellingBooks\bin\AutoMapper.Collection.dll
+C:\Users\user\source\repos\BestSellingBooks\BestSellingBooks\bin\AutoMapper.Collection.EntityFramework.dll
+C:\Users\user\source\repos\BestSellingBooks\BestSellingBooks\bin\AutoMapper.Collection.LinqToSQL.dll
+C:\Users\user\source\repos\BestSellingBooks\BestSellingBooks\bin\AutoMapper.Extensions.ExpressionMapping.dll
+C:\Users\user\source\repos\BestSellingBooks\BestSellingBooks\bin\System.ValueTuple.dll
+C:\Users\user\source\repos\BestSellingBooks\BestSellingBooks\bin\AutoMapper.Extensions.ExpressionMapping.xml
+C:\Users\user\source\repos\BestSellingBooks\BestSellingBooks\bin\System.ValueTuple.xml

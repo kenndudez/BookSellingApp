@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using BestSellingBooks.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -25,6 +27,19 @@ namespace BestSellingBooks.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+        public ActionResult Basic()
+        {
+            return View();
+        }
+        public ActionResult Advanced()
+        {
+            var person = new Person
+            {
+                FirstName = "Eric",
+                LastName = "McQuiggan"
+            };
+            return View(person);
         }
     }
 }

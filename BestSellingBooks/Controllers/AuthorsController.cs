@@ -8,8 +8,10 @@ using System.Web;
 using System.Web.ModelBinding;
 using System.Web.Mvc;
 using BestSellingBooks.DAL;
-using BestSellingBooks.Models;
-using System.Linq.Dynamic;
+using BestSellingBooks.ViewModels;
+using System.Linq.Dynamic;using AutoMapper;
+
+
 namespace BestSellingBooks.Controllers
 {
     public class AuthorsController : Controller
@@ -26,15 +28,37 @@ namespace BestSellingBooks.Controllers
             queryOptions.TotalPages =
             (int)Math.Ceiling((double)db.Authors.Count() / queryOptions.PageSize);
             ViewBag.QueryOptions = queryOptions;
-            return View(authors.ToList());
+            var configuration = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<Author, AuthorViewModel>();    
+            });
+            var mapper = configuration.CreateMapper();
+            //AutoMapper.Mapper.CreateMap<Author, AuthorViewModel>();
+            return View(mapper.Map<List<Author>,
+            List<AuthorViewModel>>(authors.ToList()));
         }
-        // other functions removed for an abbreviated example
-    
-
-
-    public ActionResult Create()
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Biography")]
+        AuthorViewModel author)
         {
-            return View("Form", new Author());
+            if (ModelState.IsValid)
+            {
+                var configuration = new MapperConfiguration(cfg =>
+                {
+                    cfg.CreateMap<Author, AuthorViewModel>();
+                });
+                var mapper = configuration.CreateMapper();
+                db.Authors.Add(mapper.Map<AuthorViewModel, Author>(author));
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(author);
+        }
+        // GET: Authors/Create
+        public ActionResult Create()
+        {
+            return View("Form", new AuthorViewModel());
         }
 
         // GET: Authors/Edit/5
@@ -49,52 +73,59 @@ namespace BestSellingBooks.Controllers
             {
                 return HttpNotFound();
             }
-            return View("Form", author);
+            var configuration = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<Author, AuthorViewModel>();
+            });
+            var mapper = configuration.CreateMapper();
+
+            return View("Form", mapper.Map<Author, AuthorViewModel>(author));
         }
-        // Abbreviated controller
+            
 
 
-    // GET: Authors/Create
-     // public ActionResult Create()
-     //{
-      //   return View();
-    // }
 
-    // POST: Authors/Create
+    // POST: Authors/Edit/5
     // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
     // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Biography")] Author author)
+    [ValidateAntiForgeryToken]
+    public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,Biography")] AuthorViewModel author)
         {
             if (ModelState.IsValid)
             {
-                db.Authors.Add(author);
+                var configuration = new MapperConfiguration(cfg =>
+                {
+                    cfg.CreateMap<Author, AuthorViewModel>();
+                });
+                var mapper = configuration.CreateMapper();
+                db.Entry(mapper.Map<AuthorViewModel, Author>(author)).State
+                = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
-            return View(author);
+            return View("Form", author);
         }
 
-      
-
-        // POST: Authors/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-       [HttpPost]
-      [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,Biography")] Author author)
+        // GET: Authors/Detail/5
+        public ActionResult Details(int? id)
         {
-            if (ModelState.IsValid)
+            if (id == null)
             {
-                db.Entry(author).State = EntityState.Modified;
-               db.SaveChanges();
-              return RedirectToAction("Index");
-           }
-           return View(author);
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Author author = db.Authors.Find(id);
+            if (author == null)
+            {
+                return HttpNotFound();
+            }
+            var configuration = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<Author, AuthorViewModel>();
+            });
+            var mapper = configuration.CreateMapper();
+            return View(mapper.Map<Author, AuthorViewModel>(author));
         }
-
         // GET: Authors/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -107,7 +138,12 @@ namespace BestSellingBooks.Controllers
             {
                 return HttpNotFound();
             }
-            return View(author);
+            var configuration = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<Author, AuthorViewModel>();
+            });
+            var mapper = configuration.CreateMapper();
+            return View(mapper.Map<Author, AuthorViewModel>(author));
         }
 
         // POST: Authors/Delete/5

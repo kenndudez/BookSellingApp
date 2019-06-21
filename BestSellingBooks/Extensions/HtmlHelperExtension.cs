@@ -2,7 +2,7 @@
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
-using BestSellingBooks.Models;
+using BestSellingBooks.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

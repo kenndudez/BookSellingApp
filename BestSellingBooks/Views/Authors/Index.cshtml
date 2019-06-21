@@ -1,5 +1,5 @@
-﻿@using BestSellingBooks.Models
-@model IEnumerable<Author>
+﻿@using BestSellingBooks.ViewModels
+@model IEnumerable<AuthorViewModel>
 @{
     ViewBag.Title = "Authors";
     var queryOptions = (QueryOptions)ViewBag.QueryOptions;
@@ -26,8 +26,8 @@
                 <td data-bind="text: firstName"></td>
                 <td data-bind="text: lastName"></td>
                 <td>
-                    <a data-bind="attr: { href: '@Url.Action("Details")/' + id }"
-                       class="btn btn-info">Details</a>
+                    <a data-bind="click: $parent.showModal, attr: { href: '@Url.Action("Details")/' + id }"
+                       class="btn btn-primary">Details</a>
                     <a data-bind="attr: { href: '@Url.Action("Edit")/' + id }"
                        class="btn btn-primary">Edit</a>
                     <a data-bind="click: $parent.showDeleteModal, attr: { href: '@Url.Action("Delete")/' + id }"
